@@ -18,4 +18,7 @@ class Character():
 
 # 'someone =None' provides a default argument
     def greet(self, someone=None):
-        return "Hello, %s, I am %s. I am awesome." % (someone.name, self.name,)
+        if someone:
+            return "Hello, %s, I am %s. I am awesome." % (someone.name, self.name,)
+        else:
+            return "Hello, I am %s. I am awesome." % (self.name,)
