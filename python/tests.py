@@ -2,6 +2,7 @@
 
 from classes import Character
 from classes import Hero
+from classes import Monster
 
 # characters can be instatiated with name and avatar
 
@@ -24,4 +25,12 @@ print(arya.greet(jon))
 
 # I should be able to create a Hero instance
 bronn = Hero('Bronn of the Blackwater', 'bronn.jpg')
+# Hero should be able to greet characters and vice versa
 print(bronn.greet(arya))
+print(jon.greet(bronn))
+
+# I should be able to create a monster instance
+sauron = Monster()
+# print(jon.greet(sauron))
+# when monster greets he says "die die die die"
+print(sauron.greet(jon))
