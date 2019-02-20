@@ -1,6 +1,7 @@
 # NOT REAL TESTS :P
 
 from classes import Character
+from classes import Hero
 
 # characters can be instatiated with name and avatar
 
@@ -20,3 +21,7 @@ print(len(arya.inventory))
 print(arya.greet())
 # when i call with 'arya.greet(jon)' it should return 'Hello, Jon Snow, I am noone. I am awesome"
 print(arya.greet(jon))
+
+# I should be able to create a Hero instance
+bronn = Hero('Bronn of the Blackwater', 'bronn.jpg')
+print(bronn.greet(arya))
