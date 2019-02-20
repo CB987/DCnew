@@ -18,3 +18,5 @@ print(len(arya.inventory))
 # testing for methods
 # arya should have a greet method, when I call it, should return "the girl is noone"
 print(arya.greet())
+# when i call with 'arya.greet(jon)' it should return 'Hello, Jon Snow, I am noone. I am awesome"
+print(arya.greet(jon))
