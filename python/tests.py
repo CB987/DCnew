@@ -30,7 +30,13 @@ print(bronn.greet(arya))
 print(jon.greet(bronn))
 
 # I should be able to create a monster instance
-sauron = Monster()
+sauron = Monster("The Lord of the Rings", "eye.jpg")
 # print(jon.greet(sauron))
 # when monster greets he says "die die die die"
 print(sauron.greet(jon))
+
+# when hero meets monster "ermagerd"
+print(bronn.greet(sauron))
+
+# make an attack method
+print(bronn.attack(sauron))

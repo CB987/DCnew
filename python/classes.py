@@ -22,9 +22,7 @@ class Character():
         # this is an Object-Oriented Programming principle called
         # polymorphism
         # in python, it's called "duck typing"
-        if someone == Monster:
-            return "die die die die"
-        elif someone:
+        if someone:
             return "Hello, %s, I am %s. I am awesome." % (someone.name, self.name,)
         else:
             return "Hello, I am %s. I am awesome." % (self.name,)
@@ -34,14 +32,27 @@ class Character():
 # Character is the super class of Hero
 
 
+class Monster(Character):
+    # def __init__(self):
+    #     self.name = "bad dude"
+    #     pass
+
+    def greet(self, someone=None):
+        return "die die die die"
+
+
 class Hero(Character):
     def attack(self, other):
         return "%s attacks %s" % (self.name, other.name,)
 
-
-class Monster(Character):
-    def __init__(self):
-        pass
-
     def greet(self, someone=None):
-        return "die die die die"
+        if type(someone) == Monster:
+            return "ermagherd a monster"
+        else:
+            return super().greet(someone)
+
+
+class MinorHero(Hero):
+    def greet(self, someone=None):
+        return "I'm just an extra"
+        # if super().greet refers to the class above, can leapfrog by doing Character().greet
