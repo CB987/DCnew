@@ -1,0 +1,45 @@
+* {
+    background: palevioletred;
+}
+
+p {
+    background: teal;
+    color: sandybrown;
+    border-radius: 50%;
+}
+
+.main-title {
+    background: brown;
+    padding: 35px;
+    border-radius: 50%
+}
+
+/* .fancy-font, .navbar { separated by commas means both or all these items selector*/ 
+* {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+
+.navbar li { /* for any list item nested anywhere inside .navbar, aka descendent selector*/
+    color: green;
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    font-size: 24px;
+    color: sienna;
+}
+
+.images {
+    width: 300px;
+}
+
+.img1 {
+    width: 100%;
+}
+
+.img2 {
+    background-image: url("../images/moshow.jpeg");
+    height: 300px;
+    background-size: cover;
+}
