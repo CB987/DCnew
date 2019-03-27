@@ -32,5 +32,6 @@ insert into reviews (
     score, content, user_id, restaurant_id
     ) values (
     '5', 'more please', '1', '1'),
-    ('5', 'sesame fries give me life', '2', '1'
+    ('5', 'sesame fries give me life', '1', '1'),
+    ('5', 'cheeeeeeeeeeze', '4', '4'
 );

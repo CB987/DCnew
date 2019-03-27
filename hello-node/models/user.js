@@ -1,5 +1,6 @@
 //bring in db connection
-const db = require("../conn");
+const db = require("./conn");
+const Review = require("./review");
 //need a user class
 //Classes should start with Uppercase
 class User {
@@ -35,16 +36,39 @@ class User {
     return db.result(
       `
       update users set
-        first_name=${this.firstName},
-        last_name=${this.lastName},
-        email=${this.email},
-        password=${this.password}
+        first_name='${this.firstName}',
+        last_name='${this.lastName}',
+        email='${this.email}',
+        password='${this.password}'
       where id=${this.id}
     `
     );
     // .catch(() => {
     //   return null;
     // });
+  }
+
+  // getReviews() {
+  get reviews() {
+    return db
+      .any(`SELECT * FROM reviews WHERE user_id = ${this.id}`)
+      .then(arrayofReviews => {
+        // return arrayofReviews.map(reviewData => {
+        const arrayOfReviewInstances = [];
+
+        arrayofReviews.forEach(data => {
+          const newInstance = new Review(
+            data.id,
+            data.score,
+            data.content,
+            data.restaurant_id,
+            data.user_id
+          );
+          arrayOfReviewInstances.push(newInstance);
+        });
+
+        return arrayOfReviewInstances;
+      });
   }
 }
 
